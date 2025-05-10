@@ -1,0 +1,38 @@
+# Prover.toml for Simplified ZK Quadratic Funding Matching Proof (NUM_CONTRIBUTIONS = 3)
+
+# === Private Inputs ===
+# Assuming 3 unique contributions for this example
+contributor_secrets = ["contribSec1", "contribSec2", "contribSec3"]
+
+# Contribution amounts (must be perfect squares for our simplified sqrt check)
+# Contrib 1: 4 (sqrt=2)
+# Contrib 2: 9 (sqrt=3)
+# Contrib 3: 1 (sqrt=1)
+contribution_amounts = ["4", "9", "1"]
+contribution_sqrt_amounts = ["2", "3", "1"] # Sqrt of the amounts above
+
+contribution_blinding_factors = ["blindF1", "blindF2", "blindF3"]
+
+# === Public Inputs ===
+# !!! CRITICAL: `contribution_commitments` hashes are PLACEHOLDERS.
+# You MUST recompute these based on the private inputs above and pedersen_hash.
+# e.g., commitment1 = pedersen_hash(["contribSec1", "4", "blindF1"])
+contribution_commitments = [
+    "11111...", # PLACEHOLDER - RECOMPUTE for ("contribSec1", "4", "blindF1")
+    "22222...", # PLACEHOLDER - RECOMPUTE for ("contribSec2", "9", "blindF2")
+    "33333..."  # PLACEHOLDER - RECOMPUTE for ("contribSec3", "1", "blindF3")
+]
+
+# Calculated from private inputs:
+# Total direct donations = 4 + 9 + 1 = 14
+claimed_total_direct_donations = "14"
+
+# Number of unique contributors (must match the array size of contributions, i.e., 3)
+claimed_number_of_unique_contributors = "3"
+
+# QF Calculation:
+# sum_of_sqrt_contributions = sqrt(4) + sqrt(9) + sqrt(1) = 2 + 3 + 1 = 6
+# matched_funding = (sum_of_sqrt_contributions)^2 = 6^2 = 36
+claimed_matched_funding = "36"
+
+matching_pool_budget = "1000" # Example budget

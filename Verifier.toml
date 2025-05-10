@@ -1,0 +1,17 @@
+# Verifier.toml for Simplified ZK Quadratic Funding Matching Proof
+
+# === Public Inputs ===
+# These MUST match the public inputs in Prover.toml (after recomputation of hashes).
+
+# !!! CRITICAL: These hash values are PLACEHOLDERS.
+# Must match recomputed values from Prover.toml.
+contribution_commitments = [
+    "11111...", # PLACEHOLDER - MUST MATCH PROVER'S RECOMPUTED VALUE
+    "22222...", # PLACEHOLDER - MUST MATCH PROVER'S RECOMPUTED VALUE
+    "33333..."  # PLACEHOLDER - MUST MATCH PROVER'S RECOMPUTED VALUE
+]
+
+claimed_total_direct_donations = "14"
+claimed_number_of_unique_contributors = "3"
+claimed_matched_funding = "36"
+matching_pool_budget = "1000"

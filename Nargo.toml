@@ -1,0 +1,10 @@
+[package]
+name = "noir_quadratic_funding_proof"
+type = "bin"
+authors = ["DAppDevMaster"]
+compiler_version = ">=0.20.0" # Adjust if necessary
+
+[dependencies]
+noir_stdlib = { tag = "v0.6.0", git = "https://github.com/noir-lang/noir-libs/" , directory="stdlib"}
+# We might need a library for integer square root if available and reliable,
+# or implement the check manually. For this example, we'll have prover provide the sqrt.
